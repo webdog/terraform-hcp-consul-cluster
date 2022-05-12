@@ -64,10 +64,10 @@ variable "consul_version" {
   default = "1.11.2-ent"
 }
 
-#variable "hvn_id" {
-#  description = "Virtual Network in HCP"
-#  type        = string
-#}
+variable "hvn_id" {
+  description = "Virtual Network in HCP"
+  type        = string
+}
 
 variable "consul_public_endpoint" {
   description = "Publicly accessible endpoint for Consul"
