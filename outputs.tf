@@ -28,10 +28,10 @@ output "consul_root_token_secret_id" {
   value = hcp_consul_cluster_root_token.user.secret_id
 }
 
-# ID of the HCP VPN
-output "hcp_vpn_id" {
-  value = hcp_hvn.server.hvn_id
-}
+## ID of the HCP VPN
+#output "hcp_vpn_id" {
+#  value = hcp_hvn.server.hvn_id
+#}
 
 # URL identifying the HVN
 output "hvn_link" {

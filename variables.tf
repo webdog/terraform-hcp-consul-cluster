@@ -28,10 +28,10 @@ variable "aws_vpc_cidr_block" {
   description = "The AWS VPC CIDR Block"
 }
 
-variable "hvn_link" {
-  description = "A unique URL identifying the HCP Consul cluster."
-  type        = string
-}
+#variable "hvn_link" {
+#  description = "A unique URL identifying the HCP Consul cluster."
+#  type        = string
+#}
 
 variable "hcp_hvn_cidr_block" {
   type        = string
@@ -64,10 +64,10 @@ variable "consul_version" {
   default = "1.11.2-ent"
 }
 
-variable "hvn_id" {
-  description = "Virtual Network in HCP"
-  type        = string
-}
+#variable "hvn_id" {
+#  description = "Virtual Network in HCP"
+#  type        = string
+#}
 
 variable "consul_public_endpoint" {
   description = "Publicly accessible endpoint for Consul"
