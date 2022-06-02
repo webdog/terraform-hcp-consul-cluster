@@ -3,12 +3,12 @@ resource "hcp_hvn" "server" {
   cloud_provider = var.cloud_provider
   hvn_id         = var.hvn_name
   region         = var.hcp_region
-  cidr_block     = var.cidr_block
+  cidr_block     = var.hcp_hvn_cidr_block
 }
 
 # Creates the HCP Consul Server instance
 resource "hcp_consul_cluster" "server" {
-  # When datacenter is present, the consul dc name is set by cluster_id
+  # When datacenter variable is not passed to this resource, the consul datacenter name is the value of required variable `cluster_id`
   cluster_id      = var.consul_cluster_datacenter
   hvn_id          = hcp_hvn.server.hvn_id
   public_endpoint = var.consul_public_endpoint
@@ -18,7 +18,7 @@ resource "hcp_consul_cluster" "server" {
 
 # From HCP, creating a peering relationship that generates the pcx-id in AWS.
 resource "hcp_aws_network_peering" "default" {
-  hvn_id          = hcp_hvn.server.hvn_id #var.hvn_name
+  hvn_id          = hcp_hvn.server.hvn_id
   peer_vpc_id     = var.aws_vpc_id
   peer_vpc_region = var.aws_region
   peer_account_id = var.aws_account_id
