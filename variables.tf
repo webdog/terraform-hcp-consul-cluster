@@ -83,30 +83,3 @@ variable "hcp_consul_tier" {
   type        = string
   default = "development"
 }
-
-
-
-#variable "hvn_link" {
-#  description = "A unique URL identifying the HCP Consul cluster."
-#  type        = string
-#}
-
-#variable "hvn_id" {
-#  description = "Virtual Network name in HCP"
-#  type        = string
-#}
-
-#variable "cidr_block" {
-#  type        = string
-#  description = "CIDR block for HVN"
-#}
-
-#variable "hvn_cidr" {
-#  type        = string
-#  description = "CIDR Block for HCP"
-#}
-
-#variable "aws_cidr" {
-#  type        = string
-#  description = "CIDR Block for AWS"
-#}
